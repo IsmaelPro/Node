@@ -1,20 +1,12 @@
-var app = require('./config/server')
+var app = require('./config/server');
 
-app.get('/form_add_noticia', function(req, res){
-    res.send("admin/form_add_noticia")
-});
+var rotaNoticias = require('./app/routes/noticias')(app);
 
-app.get('/', function(req, res){
-    res.render("home/index")
-});
+var rotaHome = require('./app/routes/home')(app);
 
-app.get('/home', function(req, res){
-    res.render("home/index")
-});
+var rotaFormInclusaoNoticia = require('./app/routes/form_add_noticia')(app);
 
-app.get('/noticias', function(req, res){
-    res.render("noticias/noticias")
-});
+
 app.listen(3000, function(){
     console.log('Servidor on')
 });

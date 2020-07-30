@@ -10,7 +10,7 @@ var server = http.createServer(function(req,res){
         } else if(categoria == '/Compras'){
             res.end("<html><body>Nociticias de Compras</body></html>");
 
-        } else {
+        } else if(categoria == '/'){
             res.end("<html><Portal de Noticias</body></html>")
         }
 })
