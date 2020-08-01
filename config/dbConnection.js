@@ -1,7 +1,6 @@
 const mysql = require('mysql');
 
 const connMySQL = function(){
-        console.log('Conexão com bd foi estabelecida')
         return mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -9,7 +8,6 @@ const connMySQL = function(){
         database: 'portal_noticias'
     });
 }
-module.exports = function() {
-    
+module.exports = function() {  
     return connMySQL;
 }
